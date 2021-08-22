@@ -7,7 +7,7 @@ Currently defined potions brewing recipes:
 - splash milk potion \- gunpowder \+ bottles of milk
 - debuff removing only potion \- netherite ingot + splash milk potions
 
-com.gmail.ryderzye.CustomPotionBrewing.Commands:
+Commands:
 - /milkpotion \<amount\>
 - /debuffpotion \<amount\>
 
