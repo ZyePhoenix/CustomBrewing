@@ -1,0 +1,31 @@
+commands:
+  NO_PLAYER: 'You can only use this command at console.'
+  NO_CONSOLE: 'You must be a player to execute this command.'
+  COMMAND_ERROR: 'An unknown error has occurred.'
+  COMMAND_NUMBER: 'Expected a number, received string instead.'
+  COMMAND_NO_PERMISSION: 'You do not have permission.'
+potions:
+  MILK_POTION_NAME: '&f&lSplash Potion of Milk'
+  MILK_POTION_LORE:
+    - ''
+    - '&aAll Potion Effect Remover'
+  MILK_POTION_RGB_COLOR:
+    RED: 255
+    GREEN: 255
+    BLUE: 255
+  DEBUFF_ONLY_NAME: '&f&lSplash Debuff Remover'
+  DEBUFF_ONLY_LORE:
+    - ''
+    - '&2Debuff Potion Effect Remover'
+    - ''
+    - '&6&lVERY RARE ITEM'
+  DEBUFF_ONLY_RGB_COLOR:
+    RED: 90
+    GREEN: 80
+    BLUE: 110
+messages:
+  TARGET_REMOVED_EFFECTS: '&cYour potion effects were removed'
+  TARGET_REMOVED_BAD_EFFECTS: '&cYour debuff potion effects were removed'
+  RECEIVE_POTION: '&eYou received a Milk potion'
+options:
+  remove-only-debuff: false

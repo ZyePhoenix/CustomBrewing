@@ -1,0 +1,4 @@
+name: CustomPotionBrewing
+version: 1.0
+main: com.gmail.ryderzye.CustomPotionBrewing.CustomBrewing
+api-version: 1.16
