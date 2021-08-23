@@ -27,5 +27,3 @@ messages:
   TARGET_REMOVED_EFFECTS: '&cYour potion effects were removed'
   TARGET_REMOVED_BAD_EFFECTS: '&cYour debuff potion effects were removed'
   RECEIVE_POTION: '&eYou received a Milk potion'
-options:
-  remove-only-debuff: false

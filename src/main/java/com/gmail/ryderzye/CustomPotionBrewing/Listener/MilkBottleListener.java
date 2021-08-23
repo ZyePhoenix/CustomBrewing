@@ -1,5 +1,6 @@
 package com.gmail.ryderzye.CustomPotionBrewing.Listener;
 
+import com.gmail.ryderzye.CustomPotionBrewing.CustomBrewing;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
@@ -14,10 +15,11 @@ import java.util.*;
 public class MilkBottleListener implements Listener {
     private final String TARGET_REMOVED_EFFECTS = "&cYour potion effects were removed";
     private final String TARGET_REMOVED_BAD_EFFECTS = "&cYour debuff potion effects were removed";
-    private final String COLORED_TARGET_REMOVED_EFFECTS = ChatColor.translateAlternateColorCodes('&', (String)Objects.requireNonNull("&cYour potion effects were removed"));
-    private final String COLORED_TARGET_REMOVED_BAD_EFFECTS = ChatColor.translateAlternateColorCodes('&', (String)Objects.requireNonNull("&cYour debuff potion effects were removed"));
-    private static final List<String> MILK_LORE = Arrays.asList("", "&aAll Potion Effect Remover");
-    private static final List<String> DEBUFF_ONLY_LORE = Arrays.asList("", "&2Debuff Potion Effect Remover", "", "&6&lVERY RARE ITEM");
+    private final String COLORED_TARGET_REMOVED_EFFECTS = ChatColor.translateAlternateColorCodes('&', (String)Objects.requireNonNull(TARGET_REMOVED_EFFECTS));
+    private final String COLORED_TARGET_REMOVED_BAD_EFFECTS = ChatColor.translateAlternateColorCodes('&', (String)Objects.requireNonNull(TARGET_REMOVED_BAD_EFFECTS));
+    private static final List<String> MILK_LORE = CustomBrewing.get().getConfig().getStringList("potions.MILK_POTION_LORE");
+
+    private static final List<String> DEBUFF_ONLY_LORE = CustomBrewing.get().getConfig().getStringList("potions.DEBUFF_ONLY_LORE");
 
     public MilkBottleListener() {
     }

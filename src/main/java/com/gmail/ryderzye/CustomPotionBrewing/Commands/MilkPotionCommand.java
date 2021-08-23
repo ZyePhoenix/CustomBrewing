@@ -20,19 +20,21 @@ import org.bukkit.inventory.meta.PotionMeta;
 
 public class MilkPotionCommand {
     private static final String MILK_POTION_NAME = CustomBrewing.get().getConfig().getString("potions.MILK_POTION_NAME");
-    private static final String COLORED_MILK_POTION_NAME;
-    private static final String DEBUFF_ONLY_NAME;
-    private static final String COLORED_DEBUFF_ONLY_NAME;
-    private static final String MESSAGE_RECEIVE;
-    private static final String COLORED_MESSAGE_RECEIVE;
-    private static final int MILK_RGB_RED;
-    private static final int MILK_RGB_GREEN;
-    private static final int MILK_RGB_BLUE;
-    private static final int DEBUFF_ONLY_RGB_RED;
-    private static final int DEBUFF_ONLY_RGB_GREEN;
-    private static final int DEBUFF_ONLY_RGB_BLUE;
-    private static final List<String> MILK_LORE;
-    private static final List<String> DEBUFF_ONLY_LORE;
+    private static final String COLORED_MILK_POTION_NAME = ChatColor.translateAlternateColorCodes('&', (String)Objects.requireNonNull(MILK_POTION_NAME));
+    private static final String DEBUFF_ONLY_NAME = CustomBrewing.get().getConfig().getString("potions.DEBUFF_ONLY_NAME");
+    private static final String COLORED_DEBUFF_ONLY_NAME = ChatColor.translateAlternateColorCodes('&', (String)Objects.requireNonNull(DEBUFF_ONLY_NAME));
+    private static final String MESSAGE_RECEIVE = CustomBrewing.get().getConfig().getString("messages.RECEIVE_POTION");
+    private static final String COLORED_MESSAGE_RECEIVE = ChatColor.translateAlternateColorCodes('&', String.valueOf(MESSAGE_RECEIVE));
+
+    private static final int MILK_RGB_RED = CustomBrewing.get().getConfig().getInt("potions.MILK_POTION_RGB_COLOR.RED");
+    private static final int MILK_RGB_GREEN = CustomBrewing.get().getConfig().getInt("potions.MILK_POTION_RGB_COLOR.GREEN");
+    private static final int MILK_RGB_BLUE = CustomBrewing.get().getConfig().getInt("potions.MILK_POTION_RGB_COLOR.BLUE");
+    private static final int DEBUFF_ONLY_RGB_RED = CustomBrewing.get().getConfig().getInt("potions.DEBUFF_ONLY_RGB_COLOR.RED");
+    private static final int DEBUFF_ONLY_RGB_GREEN = CustomBrewing.get().getConfig().getInt("potions.DEBUFF_ONLY_RGB_COLOR.GREEN");
+    private static final int DEBUFF_ONLY_RGB_BLUE = CustomBrewing.get().getConfig().getInt("potions.DEBUFF_ONLY_RGB_COLOR.BLUE");
+
+    private static final List<String> MILK_LORE = CustomBrewing.get().getConfig().getStringList("potions.MILK_POTION_LORE");
+    private static final List<String> DEBUFF_ONLY_LORE = CustomBrewing.get().getConfig().getStringList("potions.DEBUFF_ONLY_LORE");
 
     public MilkPotionCommand() {
     }
@@ -89,21 +91,5 @@ public class MilkPotionCommand {
         }
 
         return list;
-    }
-
-    static {
-        COLORED_MILK_POTION_NAME = ChatColor.translateAlternateColorCodes('&', (String)Objects.requireNonNull(MILK_POTION_NAME));
-        DEBUFF_ONLY_NAME = CustomBrewing.get().getConfig().getString("potions.DEBUFF_ONLY_NAME");
-        COLORED_DEBUFF_ONLY_NAME = ChatColor.translateAlternateColorCodes('&', (String)Objects.requireNonNull(DEBUFF_ONLY_NAME));
-        MESSAGE_RECEIVE = CustomBrewing.get().getConfig().getString("messages.RECEIVE_POTION");
-        COLORED_MESSAGE_RECEIVE = ChatColor.translateAlternateColorCodes('&', String.valueOf(MESSAGE_RECEIVE));
-        MILK_RGB_RED = CustomBrewing.get().getConfig().getInt("potions.MILK_POTION_RGB_COLOR.RED");
-        MILK_RGB_GREEN = CustomBrewing.get().getConfig().getInt("potions.MILK_POTION_RGB_COLOR.GREEN");
-        MILK_RGB_BLUE = CustomBrewing.get().getConfig().getInt("potions.MILK_POTION_RGB_COLOR.BLUE");
-        DEBUFF_ONLY_RGB_RED = CustomBrewing.get().getConfig().getInt("potions.DEBUFF_ONLY_RGB_COLOR.RED");
-        DEBUFF_ONLY_RGB_GREEN = CustomBrewing.get().getConfig().getInt("potions.DEBUFF_ONLY_RGB_COLOR.GREEN");
-        DEBUFF_ONLY_RGB_BLUE = CustomBrewing.get().getConfig().getInt("potions.DEBUFF_ONLY_RGB_COLOR.BLUE");
-        MILK_LORE = CustomBrewing.get().getConfig().getStringList("potions.MILK_POTION_LORE");
-        DEBUFF_ONLY_LORE = CustomBrewing.get().getConfig().getStringList("potions.DEBUFF_ONLY_LORE");
     }
 }
