@@ -47,31 +47,19 @@ public class CustomBrewing extends JavaPlugin {
         int MILK_RGB_RED = get().getConfig().getInt("potions.MILK_POTION_RGB_COLOR.RED");
         int MILK_RGB_GREEN = get().getConfig().getInt("potions.MILK_POTION_RGB_COLOR.GREEN");
         int MILK_RGB_BLUE = get().getConfig().getInt("potions.MILK_POTION_RGB_COLOR.BLUE");
-        int DEBUFF_ONLY_RGB_RED = get().getConfig().getInt("potions.DEBUFF_ONLY_RGB_COLOR.RED");
-        int DEBUFF_ONLY_RGB_GREEN = get().getConfig().getInt("potions.DEBUFF_ONLY_RGB_COLOR.GREEN");
-        int DEBUFF_ONLY_RGB_BLUE = get().getConfig().getInt("potions.DEBUFF_ONLY_RGB_COLOR.BLUE");
-
         String MILK_POTION_NAME = get().getConfig().getString("potions.MILK_POTION_NAME");
         String COLORED_MILK_POTION_NAME = ChatColor.translateAlternateColorCodes('&', (String)Objects.requireNonNull(MILK_POTION_NAME));
-        String DEBUFF_ONLY_NAME = get().getConfig().getString("potions.DEBUFF_ONLY_NAME");
-        String COLORED_DEBUFF_ONLY_NAME = ChatColor.translateAlternateColorCodes('&', (String)Objects.requireNonNull(DEBUFF_ONLY_NAME));
-
         List<String> MILK_BOTTLE_LORE = Arrays.asList("", "&4BREWING MATERIAL ONLY", "&4DRINKING THIS HAS NO EFFECT");
         List<String> MILK_LORE = get().getConfig().getStringList("potions.MILK_POTION_LORE");
-        List<String> DEBUFF_ONLY_LORE = get().getConfig().getStringList("potions.DEBUFF_ONLY_LORE");
 
         new MilkBottleListener(this);
 
         ItemStack milkBottle = this.customPotion("&f&lBottle of Milk", false, MILK_RGB_RED, MILK_RGB_GREEN, MILK_RGB_BLUE, MILK_BOTTLE_LORE);
         ItemStack splashMilk = this.customPotion(COLORED_MILK_POTION_NAME, true, MILK_RGB_RED, MILK_RGB_GREEN, MILK_RGB_BLUE, MILK_LORE);
-        ItemStack splashDebuffRemover = this.customPotion(COLORED_DEBUFF_ONLY_NAME, true, DEBUFF_ONLY_RGB_RED, DEBUFF_ONLY_RGB_GREEN, DEBUFF_ONLY_RGB_BLUE, DEBUFF_ONLY_LORE);
-
         BrewingRecipe milkBottleRecipe = new BrewingRecipe(new NamespacedKey(this, "milkBottle"), new ItemStack(milkBottle), new ItemStack(Material.MILK_BUCKET), new ItemStack(Material.GLASS_BOTTLE));
         BrewingRecipe splashMilkRecipe = new BrewingRecipe(new NamespacedKey(this, "milkBottle"), new ItemStack(splashMilk), new ItemStack(Material.GUNPOWDER), new ItemStack(milkBottle));
-        BrewingRecipe splashDebuffRemoverRecipe = new BrewingRecipe(new NamespacedKey(this, "milkBottle"), new ItemStack(splashDebuffRemover), new ItemStack(Material.NETHERITE_INGOT), new ItemStack(splashMilk));
         this.bc.addRecipe(milkBottleRecipe);
         this.bc.addRecipe(splashMilkRecipe);
-        this.bc.addRecipe(splashDebuffRemoverRecipe);
 
         this.commandsManager = new BukkitCommandsManager();
         this.defaultRegistration = new CommandsManagerRegistration(this, this.commandsManager);
